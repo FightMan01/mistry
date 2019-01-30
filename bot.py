@@ -45,7 +45,7 @@ async def ping(ctx):
 
 @client.command(pass_context=True)
 async def purge(ctx, amount=301):
-    '''Usage: p!purge [amount]'''
+    '''Usage: (purge [amount]'''
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '416226732966936577':
         try:
             channel = ctx.message.channel
@@ -62,7 +62,7 @@ async def purge(ctx, amount=301):
 
 @client.command(pass_context=True, no_pm=True)
 async def kick(ctx, user: discord.Member, * ,reason : str = None):
-    '''Usage: p!kick [member] [reason]'''
+    '''Usage: (kick [member] [reason]'''
     if not ctx.message.author.bot:
         if ctx.message.author.server_permissions.administrator:
             if reason == "None":
@@ -122,7 +122,7 @@ async def leave(ctx):
 
 @client.command(aliases=['p'], pass_context=True)
 async def play(ctx, * ,url, ytdl_options=None, **kwarg):
-    '''Usage: p!play [music]'''
+    '''Usage: (play [music]'''
     if not ctx.message.author.bot:
         server = ctx.message.server
         voice_client = client.voice_client_in(server)
@@ -246,7 +246,7 @@ async def on_message(message) :
 
 @client.command(pass_context = True)
 async def mute(ctx, member: discord.Member):
-    '''Usage: p!mute [mention] Need role named "Muted" '''
+    '''Usage: (mute [mention] Need role named "Muted" '''
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '416226732966936577' or ctx.message.author.id == '497797334684401664':
         role = discord.utils.get(member.server.roles, name='Muted')
         await client.add_roles(member, role)
@@ -258,7 +258,7 @@ async def mute(ctx, member: discord.Member):
 
 @client.command(pass_context = True)
 async def unmute(ctx, member: discord.Member):
-    '''Usage: p!unmute [mention] Need role named "Muted" '''
+    '''Usage: (unmute [mention] Need role named "Muted" '''
     if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '416226732966936577' or ctx.message.author.id == '497797334684401664':
         role = discord.utils.get(member.server.roles, name='Muted')
         await client.remove_roles(member, role)
@@ -279,7 +279,7 @@ async def warn(ctx, member: discord.Member, *, reason : str = None):
 
 @client.command(aliases=['user-info', 'ui'], pass_context=True, invoke_without_command=True)
 async def info(ctx, user: discord.Member):
-    '''Usage: p!info [mention]'''
+    '''Usage: (info [mention]'''
     if not ctx.message.author.bot:
         try:
             embed = discord.Embed(title="Information from this member: {}".format(user.name), description="Details:", color=0x00ff00)
