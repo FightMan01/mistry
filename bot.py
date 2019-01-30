@@ -15,7 +15,7 @@ global chat_filter
 global bypass_list
 chat_filter = ["FUCK", "DICK", "SHIT", "FUCKING", "BITCH"]
 bypass_list = []
-client = commands.Bot(command_prefix='.')
+client = commands.Bot(command_prefix='(')
 Client = discord.Client()
 
 @client.event
@@ -27,7 +27,7 @@ async def on_ready():
     while not counter > 0:
         await client.change_presence(game=discord.Game(name="Just being cool"))
         await asyncio.sleep(10)
-        await client.change_presence(game=discord.Game(name=".help"))
+        await client.change_presence(game=discord.Game(name="(help"))
         await asyncio.sleep(10)
 
 @client.command(pass_context=True)
