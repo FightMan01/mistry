@@ -68,7 +68,7 @@ async def help(ctx):
     embed.add_field(name="(kick [member] [reason]", value="Kick a member from this server. Admin premissions needed.")
     embed.add_field(name="(ban [member] [reason]", value="Ban a member from this server. Admin premissions needed.")
     embed.add_field(name="(mute / unmute [member]", value="Mute / unmute a member. Needs a role named 'Muted'. Admin premssions needed.")
-    embed.add_field(name="(warn [member]", value="Warn a user. Admin permissions needed.")
+    embed.add_field(name="(warn [member] [reason]", value="Warn a user. Admin permissions needed.")
     embed.add_field(name="(deathmatch [member]", value="Fight with someone using this command!")
     embed.add_field(name="(play [music]", value="Playes a music.")
     embed.add_field(name="(leave", value="Leaves a voice channel.")
