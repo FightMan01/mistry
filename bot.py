@@ -17,6 +17,7 @@ chat_filter = ["FUCK", "DICK", "SHIT", "FUCKING", "BITCH"]
 bypass_list = []
 client = commands.Bot(command_prefix='(')
 Client = discord.Client()
+client.remove_command('help')
 
 @client.event
 async def on_ready():
@@ -59,6 +60,22 @@ async def purge(ctx, amount=301):
             await client.say("The number must be between 1 and 300 and the message be maximum 14 days old.:x:")
     else:
         await client.say("You need Admin perms to use this. :x:")
+
+@client.command(pass_context = True)
+async def help(ctx):
+    embed = discord.Embed(title="MistryBot help", description="Here you can find my commands.", color=0x0008FF)
+    embed.add_field(name="(purge [amount]", value="This command will delete messasges. Admin premissions needed.")
+    embed.add_field(name="(kick [member] [reason]", value="Kick a member from this server. Admin premissions needed.")
+    embed.add_field(name="(ban [member] [reason]", value="Ban a member from this server. Admin premissions needed.")
+    embed.add_field(name="(mute / unmute [member]", value="Mute / unmute a member. Needs a role named 'Muted'. Admin premssions needed.")
+    embed.add_field(name="(warn [member]", value="Warn a user. Admin permissions needed.")
+    embed.add_field(name="(deathmatch [member]", value="Fight with someone using this command!")
+    embed.add_field(name="(play [music]", value="Playes a music.")
+    embed.add_field(name="(leave", value="Leaves a voice channel.")
+    embed.add_field(name="(now", value="Displays the now playing music title.")
+    embed.add_field(name="(serverinfo", value="Show some info from this server.")
+    embed.add_field(name="(info [member]", value="Show some info from that member.")
+    await client.say(embed=embed)
 
 @client.command(pass_context=True, no_pm=True)
 async def kick(ctx, user: discord.Member, * ,reason : str = None):
