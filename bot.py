@@ -13,7 +13,7 @@ playing = "No music playing right now :("
 players = {}
 global chat_filter
 global bypass_list
-chat_filter = ["FUCK", "DICK", "SHIT", "FUCKING", "BITCH"]
+chat_filter = ["zsalmale625654716"]
 bypass_list = []
 client = commands.Bot(command_prefix='(')
 Client = discord.Client()
